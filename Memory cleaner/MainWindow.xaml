@@ -1,0 +1,14 @@
+﻿<Window x:Class="Memory_cleaner.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Memory_cleaner"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <Button x:Name="button" Content="Clean" HorizontalAlignment="Left" Height="98" Margin="112,178,0,0" VerticalAlignment="Top" Width="270" Click="button_Click"/>
+        <Image x:Name="image" HorizontalAlignment="Left" Height="100" Margin="191,36,0,0" VerticalAlignment="Top" Width="100" Source="computer.png"/>
+
+    </Grid>
+</Window>
