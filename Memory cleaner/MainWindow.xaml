@@ -5,10 +5,19 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Memory_cleaner"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="Memory Cleaner" Height="369" Width="525" Loaded="Window_Loaded">
     <Grid>
-        <Button x:Name="button" Content="Clean" HorizontalAlignment="Left" Height="98" Margin="112,178,0,0" VerticalAlignment="Top" Width="270" Click="button_Click"/>
-        <Image x:Name="image" HorizontalAlignment="Left" Height="100" Margin="191,36,0,0" VerticalAlignment="Top" Width="100" Source="computer.png"/>
+        <Image x:Name="image" HorizontalAlignment="Center" Height="100" VerticalAlignment="Top" Width="100" Source="computer.png" Margin="0,35,0,0"/>
+        <Button x:Name="clean_btn" Content="Clean" HorizontalAlignment="Left" Height="36" VerticalAlignment="Top" Width="132" Click="Clean_Click" Margin="95,191,0,0"/>
+        <Button x:Name="stop_btn" IsEnabled="False" Content="Stop" HorizontalAlignment="Right" Height="36" VerticalAlignment="Top" Width="132" Click="Stop_Click" Margin="0,191,95,0"/>
+        <ProgressBar x:Name="progess" Height="26" VerticalAlignment="Top" Margin="95,154,95,0"/>
+        <TextBlock HorizontalAlignment="Left" Margin="96,242,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="Memory"/>
+        <TextBlock HorizontalAlignment="Left" Margin="96,263,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="Free"/>
+        <TextBlock HorizontalAlignment="Left" Margin="96,284,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="Used by app"/>
+        <TextBlock x:Name="totalMem" HorizontalAlignment="Right" Margin="0,242,96,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="0 GB"/>
+        <TextBlock x:Name="freeMem" HorizontalAlignment="Right" Margin="0,263,96,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="0 GB"/>
+        <TextBlock x:Name="usedMemByApp" HorizontalAlignment="Right" Margin="0,284,96,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="0 GB"/>
+        <TextBlock HorizontalAlignment="Left" Margin="5,0,0,5" TextWrapping="Wrap" VerticalAlignment="Bottom"><Run Text="©️ "/><Run Text="2022 KOD by "/><Run Foreground="RoyalBlue" TextDecorations="Underline" Cursor="Hand" MouseUp="Run_MouseUp">Mohammad</Run></TextBlock>
 
     </Grid>
 </Window>
