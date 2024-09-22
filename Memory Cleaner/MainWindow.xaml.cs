@@ -170,7 +170,6 @@ namespace Memory_cleaner
         {
             isStop = true;
             isRunning = false;
-            clean_btn.IsEnabled = true;
             stop_btn.IsEnabled = false;
         }
 
