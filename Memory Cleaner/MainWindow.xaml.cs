@@ -99,11 +99,15 @@ namespace Memory_cleaner
         private ulong GetFreeMemory()
         {
             ulong free = 0;
-            ManagementObjectSearcher search = new ManagementObjectSearcher("root\\CIMV2", "Select TotalVisibleMemorySize, FreePhysicalMemory from Win32_OPeratingSystem");
-            foreach (ManagementObject x in search.Get())
+            using (ManagementObjectSearcher search = new ManagementObjectSearcher("root\\CIMV2", "Select TotalVisibleMemorySize, FreePhysicalMemory from Win32_OPeratingSystem"))
+            using (ManagementObjectCollection results = search.Get())
             {
-                ulong totalMemory = (ulong)x["TotalVisibleMemorySize"];
-                free = (ulong)x["FreePhysicalMemory"];
+                foreach (ManagementObject x in results)
+                {
+                    ulong totalMemory = (ulong)x["TotalVisibleMemorySize"];
+                    free = (ulong)x["FreePhysicalMemory"];
+                    x.Dispose();
+                }
             }
             return free * 1024;
         }
