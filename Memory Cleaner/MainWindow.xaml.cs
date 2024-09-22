@@ -67,7 +67,7 @@ namespace Memory_cleaner
             ulong free = GetFreeMemory();
             if (finished)
             {
-                MessageBox.Show(SizeSuffix(Math.Max(free - initialFree, 0)) + " is Freed\nThank you for using this App.", "Memory Cleaner");
+                MessageBox.Show(SizeSuffix(free > initialFree ? free - initialFree : 0) + " is Freed\nThank you for using this App.", "Memory Cleaner");
             }
         }
 
