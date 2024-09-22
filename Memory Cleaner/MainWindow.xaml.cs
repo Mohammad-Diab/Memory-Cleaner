@@ -152,6 +152,10 @@ namespace Memory_cleaner
                     imagesList.Add(bmp);
                 }
             }
+            catch (OutOfMemoryException)
+            {
+                finished = true;
+            }
             catch (Exception ex)
             {
                 ms?.Dispose();
